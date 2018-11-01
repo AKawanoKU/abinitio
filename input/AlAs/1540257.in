@@ -1,0 +1,34 @@
+&control
+    calculation='scf' ,
+    restart_mode='from_scratch' ,
+    prefix='1540257' ,
+    outdir = './1540257/' ,
+    wfcdir = './1540257/' ,
+    pseudo_dir = '../pseudo' ,
+    disk_io='default' ,
+    forc_conv_thr= 0.001 ,
+    verbosity = 'high' ,
+    nstep = 200 ,
+ /
+ &system
+    space_group= 216 ,
+    celldm(1) = 10.69736165 
+    nat =  2 ,
+    ntyp = 2 ,
+    ecutwfc = 60.0 ,
+    ecutrho = 360.0 ,
+ /
+ &electrons
+    electron_maxstep = 200 ,
+    mixing_beta = 0.7 ,
+!   use smaller conv_thr for better results ,
+    conv_thr = 1.0d-14 ,
+ /
+ATOMIC_SPECIES
+  Al   26.982   Al.pbesol-n-kjpaw_psl.1.0.0.UPF
+  As   74.922   As.pbesol-n-kjpaw_psl.1.0.0.UPF
+ATOMIC_POSITIONS crystal_sg
+Al     0.000000   0.000000   0.000000
+As     0.250000   0.250000   0.250000
+K_POINTS automatic
+ 3 3 3 0 0 0

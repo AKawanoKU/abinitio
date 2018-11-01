@@ -1,0 +1,44 @@
+&control
+    calculation='scf' ,
+    restart_mode='from_scratch' ,
+    prefix='LiTaO3_mp' ,
+    outdir = './LiTaO3_mp/' ,
+    wfcdir = './LiTaO3_mp/' ,
+    pseudo_dir = '../pseudo' ,
+    disk_io='default' ,
+    forc_conv_thr= 0.001 ,
+    verbosity = 'high' ,
+    nstep = 200 ,
+ /
+ &system
+    space_group= 1 ,
+    celldm(1) = 10.45740234 ,
+    celldm(4) = 0.55709503 ,
+    nat =  10 ,
+    ntyp = 3 ,
+    ecutwfc = 60.0 ,
+    ecutrho = 360.0 ,
+ /
+ &electrons
+    electron_maxstep = 200 ,
+    mixing_beta = 0.7 ,
+!   use smaller conv_thr for better results ,
+    conv_thr = 1.0d-14 ,
+ /
+ATOMIC_SPECIES
+  Li    6.941   Li.pbesol-s-kjpaw_psl.1.0.0.UPF
+  Ta  10.0   Ta.pbesol-n-kjpaw_psl.1.0.0.UPF
+   O   15.999   O.pbesol-n-kjpaw_psl.0.1.UPF
+ATOMIC_POSITIONS crystal_sg
+Li     0.717744   0.717744   0.717744
+Li     0.217744   0.217744   0.217744
+Ta     0.000553   0.000553   0.000553
+Ta     0.500553   0.500553   0.500553
+O      0.774014   0.139347   0.380142
+O      0.880142   0.639347   0.274014
+O      0.639347   0.274014   0.880142
+O      0.274014   0.880142   0.639347
+O      0.380142   0.774014   0.139347
+O      0.139347   0.380142   0.774014
+K_POINTS automatic
+ 3 3 3 0 0 0
