@@ -1,0 +1,37 @@
+&control
+    calculation='scf' ,
+    restart_mode='from_scratch' ,
+    prefix='1544717' ,
+    outdir = './1544717/' ,
+    wfcdir = './1544717/' ,
+    pseudo_dir = '../pseudo' ,
+    disk_io='default' ,
+    forc_conv_thr= 0.001 ,
+    verbosity = 'high' ,
+    nstep = 200 ,
+ /
+ &system
+    space_group= 161 ,
+    celldm(1) = 9.73830674 ,
+    celldm(3) = 2.67413632844 ,
+    nat =  3 ,
+    ntyp = 3 ,
+    ecutwfc = 60.0 ,
+    ecutrho = 360.0 ,
+ /
+ &electrons
+    electron_maxstep = 200 ,
+    mixing_beta = 0.7 ,
+!   use smaller conv_thr for better results ,
+    conv_thr = 1.0d-14 ,
+ /
+ATOMIC_SPECIES
+  Li    6.941   Li.pbesol-s-kjpaw_psl.1.0.0.UPF
+  Ta  10.0   Ta.pbesol-n-kjpaw_psl.1.0.0.UPF
+   O   15.999   O.pbesol-n-kjpaw_psl.0.1.UPF
+ATOMIC_POSITIONS crystal_sg
+Li     0.000000   0.000000   0.290900
+Ta     0.000000   0.000000   0.000000
+O      0.049500   0.342500   0.074900
+K_POINTS automatic
+ 4 4 1 0 0 0
