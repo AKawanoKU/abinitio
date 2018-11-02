@@ -1,0 +1,37 @@
+&control
+    calculation='sfc' ,
+    restart_mode='from_scratch' ,
+    prefix='lt' ,
+    outdir = './work/' ,
+    wfcdir = './work/' ,
+    pseudo_dir = '/calc-user/akawano/qe-6.3/pseudo/' ,
+    disk_io='default' ,
+    forc_conv_thr= 0.001 ,
+    verbosity = 'high' ,
+    nstep = 200 ,
+ /
+ &system
+    space_group= 161 ,
+    celldm(1) = 9.84224357 ,
+    celldm(3) = 2.67585374934 ,
+    nat =  3 ,
+    ntyp = 3 ,
+    ecutwfc = 60.0 ,
+    ecutrho = 360.0 ,
+ /
+ &electrons
+    electron_maxstep = 200 ,
+    mixing_beta = 0.7 ,
+!   use smaller conv_thr for better results ,
+    conv_thr = 1.0d-14 ,
+ /
+ATOMIC_SPECIES
+  Li    6.941   Li.pz-n-vbc.UPF
+  Ta  10.0   Ta.pz-hgh.UPF
+   O   15.999   O.pz-hgh.UPF
+ATOMIC_POSITIONS crystal_sg
+Li     0.000000   0.000000   0.217744
+Ta     0.000000   0.000000   0.000553
+O      0.009513   0.384359   0.264501
+K_POINTS automatic
+ 4 4 1 0 0 0
