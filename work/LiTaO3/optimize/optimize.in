@@ -1,0 +1,87 @@
+# Computation of the optimal lattice parameter
+
+
+# Optimization of the lattice parameters
+#optcell 1         # Optimisation of volume only
+optcell 2         # Full optimization of cell geometry (modify acell and rprim)
+ionmov  2
+ntime  30
+dilatmx 1.05
+ecutsm  0.5
+tolmxf = 1.0d-5
+
+#Definition of the k-point grids
+kptopt 1          # Option for the automatic generation of k points, taking
+                  # into account the symmetry
+nshiftk 1         # nshiftk = 1 and shiftk 0.0 0.0 0.0,
+shiftk  0 0 0     # which will be compatible with all symmetries
+
+ngkpt 6 6 6
+
+getwfk -1         # This is to speed up the calculation, by restarting
+                  # from previous wavefunctions, transferred from the old 
+                  # to the new k-points.
+
+#Definition of the planewave basis set
+ecut 44           # Maximal kinetic energy cut-off, in Hartree
+
+#Definition of the SCF procedure
+nstep 20          # Maximal number of SCF cycles
+toldfe 1.0d-11    # Will stop when, twice in a row, the difference 
+                  # between two consecutive evaluations of total energy 
+                  # differ by less than toldfe (in Hartree) 
+                  # This value is way too large for most realistic studies of materials
+diemac 9.0        # Although this is not mandatory, it is worth to
+                  # precondition the SCF cycle. The model dielectric
+                  # function used as the standard preconditioner
+                  # is described in the "dielng" input variable section.
+                  
+
+
+#--------------You have to change below parameters for your material-------------
+
+#Definition of the unit cell
+acell   3*0.10000000000000D+01 
+rprim   0.91007391750000D+01 -0.48482283364000D+01  0.00000000000000D+00
+        0.91007391750000D+01  0.48482283364000D+01  0.00000000000000D+00
+        0.65179469918000D+01  0.00000000000000D+00  0.79903152969000D+01
+
+#Definition of the atom types
+ntypat 3 # Number of the atom types
+znucl 3 73 8 # Types of atoms
+                                     
+
+#Definition of the atoms
+natom 10    
+typat 1 1 2 2 3 3 3 3 3 3
+
+xred   0.71768540440000D+00  0.71768540440000D+00  0.71768540440000D+00
+       0.21768540440000D+00  0.21768540440000D+00  0.21768540440000D+00
+       0.67315840000000D-03  0.67315840000000D-03  0.67315840000000D-03
+       0.50067315840000D+00  0.50067315840000D+00  0.50067315840000D+00
+       0.13589476360000D+00  0.77486314230000D+00  0.38268353130000D+00
+       0.63589476360000D+00  0.88268353130000D+00  0.27486314230000D+00
+       0.27486314230000D+00  0.63589476360000D+00  0.88268353130000D+00
+       0.88268353130000D+00  0.27486314230000D+00  0.63589476360000D+00
+       0.77486314230000D+00  0.38268353130000D+00  0.13589476360000D+00
+       0.38268353130000D+00  0.13589476360000D+00  0.77486314230000D+00
+
+#-------------------------------------------------------------------------------
+
+## After modifying the following section, one might need to regenerate the pickle database with runtests.py -r
+#%%<BEGIN TEST_INFO>
+#%% [setup]
+#%% executable = abinit
+#%% [files]
+#%% files_to_test = 
+#%%   tbase3_4.out, tolnlines=  0, tolabs=  6.200e-07, tolrel=  1.100e-03, fld_options=-medium
+#%% psp_files =  14si.pspnc
+#%% [paral_info]
+#%% max_nprocs = 4
+#%% [extra_info]
+#%% authors = Unknown
+#%% keywords = 
+#%% description = 
+#%%    Crystalline silicon : computation of the optimal lattice parameter
+#%%    Convergence with respect to the number of k points.
+#%%<END TEST_INFO>
