@@ -18,7 +18,8 @@
 
 !Phonon band structure output for band2eps - See note near end for
 ! dealing with gamma LO-TO splitting issue.
-   eivec  4
+   eivec  1      ! write the phonon eigenvectors
+   !eivec  4      ! generate output files for band2eps (drawing tool for the phonon band structure)
 
 !Wavevector list number 1 (Reduced coordinates and normalization factor)         
   nph1l    71      ! number of phonons in list 1                             
@@ -101,15 +102,10 @@
 ! t59_out.freq file to be used as band2eps input to get proper LO-TO 
 ! splitting at gamma.  Note that gamma occurrs twice.
 
-  nph2l   2
-  qph2l   12.3597126709 -4.0393105272E-17 3.9951576484 0.0
+  nph2l   2  ! number of directions in list 2
+  qph2l   1.0 1.0 1.0 0.0
           0.0 1.0 0.0 0.0
  
-!  nph2l    3       ! number of directions in list 2
-
-!  qph2l   1.0  0.0  0.0    0.0
-!          0.0  0.0  0.1    0.0
-!          0.0  0.1  0.0    0.0
 
 ## After modifying the following section, one might need to regenerate the pickle database with runtests.py -r
 #%%<BEGIN TEST_INFO>
