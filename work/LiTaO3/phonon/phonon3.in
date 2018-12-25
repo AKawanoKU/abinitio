@@ -1,19 +1,19 @@
-trf2_3.ddb.out
+phonon3.ddb.out
 LT phonons on 4 4 4 mesh
 13
-trf2_1o_DS3_DDB
-trf2_1o_DS4_DDB
-trf2_1o_DS5_DDB
-trf2_1o_DS6_DDB
-trf2_1o_DS7_DDB
-trf2_1o_DS8_DDB
-trf2_1o_DS9_DDB
-trf2_1o_DS10_DDB
-trf2_1o_DS11_DDB
-trf2_1o_DS12_DDB
-trf2_1o_DS13_DDB
-trf2_1o_DS14_DDB
-trf2_1o_DS15_DDB
+phonono_DS3_DDB
+phonono_DS4_DDB
+phonono_DS5_DDB
+phonono_DS6_DDB
+phonono_DS7_DDB
+phonono_DS8_DDB
+phonono_DS9_DDB
+phonono_DS10_DDB
+phonono_DS11_DDB
+phonono_DS12_DDB
+phonono_DS13_DDB
+phonono_DS14_DDB
+phonono_DS15_DDB
 
 
 ## After modifying the following section, one might need to regenerate the pickle database with runtests.py -r
