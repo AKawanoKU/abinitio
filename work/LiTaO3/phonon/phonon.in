@@ -1,6 +1,6 @@
 # Computation of phonon
 
-   ndtset   15  # 3: for only Gamma, 15: for all k-point(dispersion)
+   ndtset   3  # 3: for only Gamma, 15: for all k-point(dispersion)
 
 #Set 1 : ground state self-consistency
 
@@ -55,7 +55,7 @@
 
 #Sets 4-15 : Finite-wave-vector phonon calculations (defaults for all datasets)
 
-   tolvrs   1.0d+1     # Change to 1.0d-8 when you calculate the dispersion
+   tolvrs   1.0d-8     
    getwfk   1          # Use GS wave functions from dataset1
    kptopt   3          # Need full k-point set for finite-Q response
    rfphon   1          # Do phonon response
@@ -73,7 +73,7 @@
      ecut   44         # Maximal kinetic energy cut-off, in Hartree
 
 #Definition of the k-point grid
-    ngkpt   6 6 6
+    ngkpt   4 4 4
   nshiftk   1          # nshiftk = 1 and shiftk 0.0 0.0 0.0,
    shiftk   0 0 0      # which will be compatible with all symmetries
             
