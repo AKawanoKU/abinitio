@@ -26,7 +26,8 @@ f3 = open(phfname)
 phdata = f3.readlines()
 f3.close()
 
-atomNum = 10
+print('Type the number of atoms in the primitive cell')
+atomNum = int(raw_input('>> '))
 
 for line in vestadata:
     vestaLineNums = [i for i, line in enumerate(vestadata) if 'STRUC' in line]
