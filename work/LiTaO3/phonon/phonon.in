@@ -10,6 +10,7 @@
     nqpt1   0            # Cancel default
   tolvrs1   1.0d-30      # SCF stopping criterion (modify default)
   rfphon1   0            # Cancel default
+  nstep1    100          # Maximal number of SCF cycles
  
 #Q vectors for all datasets
 
@@ -79,7 +80,7 @@
             
 
 #Definition of the SCF procedure
-    nstep   100        # Maximal number of SCF cycles
+    nstep   50         # Maximal number of SCF cycles
    diemac   9.0        # Although this is not mandatory, it is worth to
                        # precondition the SCF cycle. The model dielectric
                        # function used as the standard preconditioner

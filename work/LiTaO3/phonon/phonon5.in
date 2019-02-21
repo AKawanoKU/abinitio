@@ -33,9 +33,8 @@
 ! splitting at gamma.  Note that gamma occurrs twice.
 
   nph2l   2  ! number of directions in list 2
-  qph2l   1.0 1.0 1.0 0.0
-          0.0 1.0 0.0 0.0
- 
+  qph2l   0.839482 0.447723 0.307919 0.0    ! [111]
+          4.70587 -8.82354 0.0 0.0    	    ! [1-10] 
 
 ## After modifying the following section, one might need to regenerate the pickle database with runtests.py -r
 #%%<BEGIN TEST_INFO>
