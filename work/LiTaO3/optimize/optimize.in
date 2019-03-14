@@ -26,6 +26,7 @@ getwfk -1         # This is to speed up the calculation, by restarting
 ecut 44           # Maximal kinetic energy cut-off, in Hartree
 
 #Definition of the SCF procedure
+ixc   11          # GGA, Perdew-Burke-Ernzerhof GGA functional
 nstep 20          # Maximal number of SCF cycles
 toldfe 1.0d-11    # Will stop when, twice in a row, the difference 
                   # between two consecutive evaluations of total energy 
